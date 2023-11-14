@@ -7,6 +7,11 @@ app = "qeo-fly"
 primary_region = "sin"
 console_command = "php /var/www/html/artisan tinker"
 
+[processes]
+  app = ""
+  cron = "cron -f"
+  worker = "php artisan queue:work"
+
 [build]
   [build.args]
     NODE_VERSION = "18"
@@ -20,6 +25,8 @@ console_command = "php /var/www/html/artisan tinker"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
   SESSION_DRIVER = "cookie"
   SESSION_SECURE_COOKIE = "true"
+  MYSQL_ATTR_SSL_CA="/etc/ssl/certs/ca-certificates.crt"
+  QUEUE_CONNECTION = "database"
 
 [http_service]
   internal_port = 8080

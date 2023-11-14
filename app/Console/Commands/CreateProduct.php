@@ -32,6 +32,7 @@ class CreateProduct extends Command
             'name' => 'Product ' . Str::random(6),
         ];
         Product::create($data);
+        // logger('Command create production');
         return 0;
     }
 }
