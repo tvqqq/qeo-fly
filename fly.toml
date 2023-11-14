@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for qeo-fly on 2023-11-13T15:24:59+07:00
+# fly.toml app configuration file generated for qeo-fly on 2023-11-13T15:37:35+07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -14,6 +14,7 @@ console_command = "php /var/www/html/artisan tinker"
 
 [env]
   APP_ENV = "production"
+  APP_URL = "https:/qeo-fly.fly.dev"
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
